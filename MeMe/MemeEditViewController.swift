@@ -115,10 +115,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePickerView.contentMode = UIViewContentMode.ScaleAspectFit
             imagePickerView.image = image
             shareButton.enabled = true
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func pickAnImageFromCamera (sender: AnyObject) {
